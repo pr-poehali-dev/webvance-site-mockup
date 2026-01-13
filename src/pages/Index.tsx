@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
 
@@ -78,10 +77,13 @@ const NavButton = ({ icon, label, active, onClick }: { icon: string; label: stri
 const HomePage = () => (
   <div className="max-w-md mx-auto px-4 pt-8 pb-4">
     <div className="flex items-center gap-3 mb-8">
-      <Avatar className="h-16 w-16 border-2 border-primary">
-        <AvatarImage src="https://cdn.poehali.dev/projects/47e7795a-abf5-42d1-b5c6-448757d85799/files/3f2853b2-374a-44d5-b5da-2d96646ed266.jpg" alt="Webvance" />
-        <AvatarFallback className="bg-primary text-primary-foreground text-xl font-bold">W</AvatarFallback>
-      </Avatar>
+      <div className="h-16 w-16 rounded-full border-2 border-primary overflow-hidden flex items-center justify-center bg-primary shrink-0">
+        <img 
+          src="https://cdn.poehali.dev/projects/47e7795a-abf5-42d1-b5c6-448757d85799/files/3f2853b2-374a-44d5-b5da-2d96646ed266.jpg" 
+          alt="Webvance" 
+          className="h-full w-full object-cover"
+        />
+      </div>
       <div>
         <h1 className="text-2xl font-bold text-foreground">Webvance</h1>
         <p className="text-sm text-muted-foreground">Создаём digital продукты</p>
@@ -235,10 +237,9 @@ const CatalogPage = () => (
 const ProfilePage = () => (
   <div className="max-w-md mx-auto px-4 pt-8 pb-4">
     <div className="flex flex-col items-center mb-8">
-      <Avatar className="h-24 w-24 mb-4 border-4 border-primary shadow-lg">
-        <AvatarImage src="/placeholder.svg" alt="User" />
-        <AvatarFallback className="bg-primary text-primary-foreground text-3xl font-bold">А</AvatarFallback>
-      </Avatar>
+      <div className="h-24 w-24 mb-4 rounded-full border-4 border-primary shadow-lg overflow-hidden flex items-center justify-center bg-primary text-primary-foreground text-3xl font-bold">
+        А
+      </div>
       <h1 className="text-2xl font-bold">Алексей Иванов</h1>
       <p className="text-muted-foreground">alexey@example.com</p>
       <Badge className="mt-2">Pro аккаунт</Badge>
